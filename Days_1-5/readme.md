@@ -6,7 +6,7 @@ The first phase focused on designing and deploying the foundational infrastructu
 
 I also built a high-level network diagram using draw.io to visualize the environment:
 
-![SOC Environment Diagram](../images/soc_environment_diagram.png) <!-- [screenshot] -->
+![SOC Environment Diagram](Days_1-5/assets/SOC-enviroment-diagram.webp) <!-- [screenshot] -->
 
 ### 🔧 Core Components
 
