@@ -14,9 +14,9 @@ This project documents my experience in building and operating a cloud-based Sec
 ## **📂 Structure**  
 | Days       | Topics Covered                  | Link                          |
 |------------|---------------------------------|-------------------------------|
-| Days 1–5   | Infrastructure Setup            | [View](Days_1-5/README.md)    |
-| Days 6–10  | Elastic Agent + Fleet Server    | [View](Days_6-10/README.md)   |
-| Days 11–13 | Brute Force Analysis            | [View](Days_11-13/README.md)  |
+| Days 1–5   | Infrastructure Setup            | [View](Days_1-5)    |
+| Days 6–10  | Elastic Agent + Fleet Server    | [View](Days_6-10)   |
+| Days 11–13 | Brute Force Analysis            | [View](Days_11-13)  |
 | Days 14–15 | *Coming soon...*                | ⏳                           |
 
 ## 🛠️ Skills Demonstrated
