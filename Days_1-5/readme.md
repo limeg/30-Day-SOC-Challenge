@@ -6,7 +6,7 @@ The first phase focused on designing and deploying the foundational infrastructu
 
 I also built a high-level network diagram using draw.io to visualize the environment:
 
-![SOC Environment Diagram](Days_1-5/assets/SOC-enviroment-diagram.webp) <!-- [screenshot] -->
+![SOC Environment Diagram](assets/SOC-enviroment-diagram.png) <!-- [screenshot] -->
 
 ### 🔧 Core Components
 
@@ -47,7 +47,7 @@ To harden the architecture, I made an important change:
 
 I isolated the Windows and Ubuntu servers **from the main VPC** to reduce lateral movement risk. This limits potential attacker access to the critical components (Elastic, Fleet, OS Ticket) in case the exposed server is compromised.
 
-![Updated SOC Architecture](../images/soc_environment_diagram_updated.png) <!-- [screenshot] -->
+![Updated SOC Architecture](assets/SOC-enviroment-diagram-updated.png) <!-- [screenshot] -->
 
 Benefits of the updated architecture:
 - Limits blast radius of a compromised host
