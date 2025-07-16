@@ -11,9 +11,9 @@ During setup, I encountered firewall-related issues preventing Fleet Server from
 
 **Fixes applied:**
 1. Modified Vultr firewall rules to allow access to Elasticsearch.  
-   ![Firewall Rule - Vultr](./assets/firewall_rule_vultr.webp) <!-- [screenshot] -->
+   ![Firewall Rule - Vultr](assets/firewall-rule.png) <!-- [screenshot] -->
 2. Enabled port 9200 on the Ubuntu VM using `ufw`.  
-   ![UFW Enabled - Port 9200](./assets/ufw_9200_allowed.webp) <!-- [screenshot] -->
+   ![UFW Enabled - Port 9200](assets/firewall-rule-UFW.png) <!-- [screenshot] -->
 
 ✅ After these changes, Fleet Server was successfully enrolled and began managing agents.
 
@@ -44,14 +44,14 @@ I connected via RDP to the Windows VM and downloaded:
 - **Config file** from Olaf’s GitHub repo
 
 Installation went smoothly using the command line.  
-![Sysmon Installed](./assets/sysmon_installed.webp) <!-- [screenshot] -->
+![Sysmon Installed](assets/sysmon-installed.png) <!-- [screenshot] -->
 
 ### 📋 Event Viewer Validation:
 I confirmed that Sysmon was working by viewing logs in Event Viewer.
 
 - **Event ID 11 (FileCreate)** appeared first.  
-  ![Event ID 11](./assets/sysmon_event_id_11.webp) <!-- [screenshot] -->
-  ![Sysmon Version Tag](./assets/sysmon_v15_15_tag.webp) <!-- [screenshot] -->
+  ![Event ID 11](assets/event-id-11.png) <!-- [screenshot] -->
+  ![Sysmon Version Tag](assets/event-id-11-meaning.png) <!-- [screenshot] -->
 
 ---
 
@@ -65,14 +65,14 @@ Today was all about getting real log data into Elasticsearch using:
 ### ✅ Steps:
 1. From Kibana, I added both integrations via the **Integrations** tab.
 2. Logs began flowing into Elasticsearch after resolving a blocked port (again, port 9200).  
-   ![Firewall Rule Port 9200](./assets/firewall_rule_port_9200.webp) <!-- [screenshot] -->
+   ![Firewall Rule Port 9200](assets/firewall-rule-1.png) <!-- [screenshot] -->
 
 ### 📈 Sample Logs:
 - Defender alert (manually triggered):  
-  ![Defender Event Log](./assets/defender_event_manual.webp) <!-- [screenshot] -->
+  ![Defender Event Log](assets/defender-event-log.png) <!-- [screenshot] -->
 
 - Sysmon logging active:  
-  ![Sysmon Log Sample](./assets/sysmon_log_sample.webp) <!-- [screenshot] -->
+  ![Sysmon Log Sample](assets/sysmon-log.png) <!-- [screenshot] -->
 
 ---
 
