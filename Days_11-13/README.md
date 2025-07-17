@@ -6,7 +6,7 @@
 
 A brute force attack is a trial-and-error method used to guess login credentials or encryption keys. Attackers automate this process, trying endless combinations until one works.
 
-It’s repetitive, noisy, and usually easy to detect — if you know what to look for.
+It’s repetitive, noisy, and usually easy to detect, if you know what to look for.
 
 ### 🧱 Types of Brute Force Attacks
 
@@ -37,6 +37,45 @@ I deployed a new **Ubuntu Server 24.04** on Vultr and exposed it to the internet
 ```bash
 /var/log# grep -i failed auth.log
 ```
-![Updated SOC Architecture](assets/SOC-enviroment-diagram-updated.png)
+![Failed SSH login attempts](assets/failed-auth-command.png)
 
+### 🔍Observations
 
+- Repeated failed root login attempts
+
+- Single IP: 183.81.169.238
+
+- Ports rotated frequently (automated/scripted behavior)
+
+## Day 13: Installing Elastic Agent + Centralizing Logs
+
+I installed Elastic Agent on the Ubuntu host to begin sending logs to my Elastic Stack for centralized review in Kibana. Because this is a testing enviroment, I used a self-signed certificate by adding the flag:
+```bash
+--insecure
+```
+![Flag addition](assets/insecure-flag.png)
+
+![Elastic Agent installed](assets/agent-installed.png)
+
+---
+
+### 🔍 Investigating SSH Failures
+
+I wanted to trace failed login attempts, particularly those targeting the root user. Using the following command on the server, I filtered out IPs involved in failed root login attempts:
+
+```bash
+grep -i failed auth.log | grep -i root | cut -d ' ' -f 9
+```
+Here’s a snippet of what came up:
+
+![Snippets of logs](assets/attacker-ips.png)
+
+After observing the IP `183.81.169.238` once again. In Kibana ,I filtered for authentication failure logs and located entries from the same ip:
+
+![Snippets of logs](assets/logs.png)
+
+This confirmed that the Elastic Agent was:
+
+- Forwarding logs correctly
+
+- Capturing real-time brute force activity
