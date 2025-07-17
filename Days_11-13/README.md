@@ -8,8 +8,6 @@ A brute force attack is a trial-and-error method used to guess login credentials
 
 It’s repetitive, noisy, and usually easy to detect — if you know what to look for.
 
----
-
 ### 🧱 Types of Brute Force Attacks
 
 - **Classic Brute Force**: Tries every possible character combination.
@@ -38,6 +36,7 @@ I deployed a new **Ubuntu Server 24.04** on Vultr and exposed it to the internet
 
 ```bash
 /var/log# grep -i failed auth.log
-
+```
+![Updated SOC Architecture](assets/SOC-enviroment-diagram-updated.png)
 
 
